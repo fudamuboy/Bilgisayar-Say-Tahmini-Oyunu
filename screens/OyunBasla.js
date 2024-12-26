@@ -1,31 +1,49 @@
 import { StyleSheet, Text, TextInput, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
+import { Alert } from 'react-native'
 import CustomBtn from '../components/CustomBtn'
+import Titre from '../components/Titre'
 
-export default function OyunBasla({ onPress }) {
+export default function OyunBasla({ onPress, onSendNumber }) {
+    const [entered, setEntered] = useState('')
 
-
+    // il faut savoir il ya  'Alert' du React Ntive  eet celui de js 'alert' ve A=chosenNumber olarak aldim
     // voici les deux fonctions permettaant de faire silme ou kabul et kan il ya le clic 
-    const resetHandler = () => {
+    const TemizleHandler = () => {
+        setEntered('')
+    }
+
+    const OnaylaHandler = () => {
+        const A = parseInt(entered)
+        if (isNaN(A) || A <= 0 || A > 99) {
+            Alert.alert('Gecersiz sayi', 'Sayi 1 ile 99 arasi olmalidir',
+                [{ text: 'Tamam', style: 'default ', onPress: numberEntered }])
+            return
+        }
+        onSendNumber(A)
+    }
+    const numberEntered = (text) => {
+        // console.log(text);
+        setEntered(text)
+
 
     }
 
-    const confirmHandler = () => {
-
-    }
     return (
         <View style={styles.container}>
-            <Text>OyunBasla</Text>
+            <Titre>Bilgisayar Sayi bulmaca Oyunu </Titre>
             <View style={styles.card}>
                 <TextInput style={styles.input}
                     keyboardType='number-pad'
-                    maxLength={2} />
+                    maxLength={2}
+                    value={entered}
+                    onChangeText={(text) => numberEntered(text)} />
                 <View style={styles.buttonsContainer}>
                     <View style={styles.buttonContainer}>
-                        <CustomBtn onPress={resetHandler}>Temizle</CustomBtn>
+                        <CustomBtn onPress={TemizleHandler}>Temizle</CustomBtn>
                     </View>
                     <View style={styles.buttonContainer}>
-                        <CustomBtn onPress={confirmHandler}>Onayla</CustomBtn>
+                        <CustomBtn onPress={OnaylaHandler}>Onayla</CustomBtn>
 
                     </View>
                 </View>
