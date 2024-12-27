@@ -12,15 +12,15 @@ export default function OyunBasla({ onPress, onSendNumber }) {
     const TemizleHandler = () => {
         setEntered('')
     }
-
+    // si il ya ces conditions ici il souhaite le onay et A=chosenNum
     const OnaylaHandler = () => {
         const A = parseInt(entered)
         if (isNaN(A) || A <= 0 || A > 99) {
-            Alert.alert('Gecersiz sayi', 'Sayi 1 ile 99 arasi olmalidir',
+            Alert.alert('Gecersiz sayi', 'Sayi 1 ile 100 arasi olmalidir',
                 [{ text: 'Tamam', style: 'default ', onPress: numberEntered }])
             return
         }
-        onSendNumber(A)
+        onSendNumber(A) // une pte liasion pour envoyer le A ds une page 
     }
     const numberEntered = (text) => {
         // console.log(text);
@@ -28,10 +28,11 @@ export default function OyunBasla({ onPress, onSendNumber }) {
 
 
     }
-
+    // si le nbre est plis ke 200 et plus pt ke 0 alors la condition ne marche pas  
+    // C'est ds le const OnaylaHandler que se fait la comparaison du nbre que le ussr peut renter 
     return (
         <View style={styles.container}>
-            <Titre>Bilgisayar Sayi bulmaca Oyunu </Titre>
+            <Titre>Bilgisayar Sayi Tahmini Oyunu </Titre>
             <View style={styles.card}>
                 <TextInput style={styles.input}
                     keyboardType='number-pad'
