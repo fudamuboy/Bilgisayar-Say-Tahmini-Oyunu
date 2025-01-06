@@ -3,7 +3,7 @@ import React from 'react'
 import Titre from '../components/Titre';
 import CustomBtn from '../components/CustomBtn';
 
-export default function OyunBitis({ roundsNumber, userNumber }) {
+export default function OyunBitis({ roundsNumber, userNumber, StartNewGame }) {
     return (
         <View style={styles.container}>
             <Titre style={styles.title}>Game is Done !</Titre>
@@ -14,12 +14,13 @@ export default function OyunBitis({ roundsNumber, userNumber }) {
             </View>
             <Text style={styles.result}>
                 <Text style={styles.number}> {roundsNumber}</Text> denemeyle
-                <Text style={styles.number}> {userNumber} </Text> gon be finding
+                <Text style={styles.number}> {userNumber} </Text> sayi bulundu !
             </Text>
-            <CustomBtn>Start new game </CustomBtn>
+            <CustomBtn onPress={StartNewGame}> Start new game </CustomBtn>
         </View>
     )
 }
+// au niveau de CustomBtn je souhaite relancer le jeu ds ce cas je fais Onpress
 // maintenant combien tu as fais l'essayage et puis la valeur pour cela
 //  je vais declarer deux props et sender vers app.js 
 

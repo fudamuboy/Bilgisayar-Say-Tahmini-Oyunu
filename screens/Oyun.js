@@ -7,11 +7,6 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace'
 
 
-
-
-
-
-
 // le currentGuess est le nbbre de deinette de l'ordi
 // et j'ai utilise curentGuess cme kle pr afficher le nbre guess ds la Oyun.js
 // je fais la sme raison je lis le props ds cette partie 

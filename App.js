@@ -29,10 +29,13 @@ export default function App() {
   if (userNumber) {
     screens = <Oyun userNumber={userNumber} onGaveOver={OyunDoneHandler} />;
   }
-
-
+  // la partie de relancement du jeu avec la value
+  function NewGameHandler() {
+    setUserNumber(null)
+    setGuessCounts(0) // Ceci est pr le nbre fois de tahmin de l'ordi
+  }
   if (gameIsOver && userNumber) {
-    screens = <OyunBitis roundsNumber={guessCounts} userNumber={userNumber} />
+    screens = <OyunBitis roundsNumber={guessCounts} userNumber={userNumber} StartNewGame={NewGameHandler} />
   }
 
   return (
