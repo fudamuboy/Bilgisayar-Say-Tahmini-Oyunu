@@ -1,5 +1,5 @@
-﻿# Sayi-bulmaca-Oyunu 
-Bilgisayar Sayı Tahmini Oyunu 🎮
+﻿# Bilgisayar Sayı Tahmini Oyunu 🎮 
+
 
 Bu proje, kullanıcı tarafından belirlenen bir sayıyı tahmin etmeye çalışan bir bilgisayar tahmin oyunu uygulamasıdır. React Native kullanılarak geliştirilmiş ve mobil cihazlarda çalışacak şekilde tasarlanmıştır.
 Özellikler 📋
