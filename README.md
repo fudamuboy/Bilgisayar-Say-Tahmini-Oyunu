@@ -52,7 +52,7 @@ Ekran Görüntüleri 📱
     Bitiş Ekranı
     Oyun sonucunun gösterildiği ekran.
 
-Ekran Görüntüleri videosu 📱
+# Ekran Görüntü videosu 📱
   https://github.com/user-attachments/assets/0384cc5e-618b-40c8-88ef-9ded451d6dcb
 
 
