@@ -10,15 +10,17 @@ import { LinearGradient } from 'expo-linear-gradient';
 export default function App() {
   const [userNumber, setUserNumber] = useState(null);
   const [gameIsOver, setGameIsOver] = useState(true)
-
+  const [guessCounts, setGuessCounts] = useState(0)
 
   // au debut le setGameIsoOver is false mais sil trouve le nbre je le mets a false 
   const sendedNumHandler = (gonderdigiSayi) => {
     setUserNumber(gonderdigiSayi);
     setGameIsOver(false)
   };
-  function OyunDoneHandler() {
+  // A=numberOfGuess
+  function OyunDoneHandler(A) {
     setGameIsOver(true)
+    setGuessCounts(A)
   }
   // j'ai lie un props a ce nom pour l'envoyer vers OyunBasla car bilgisyar tahmini yaparken lazimdir
   // Définir la variable `screens` ici, basée sur l'état `userNumber`.
@@ -30,7 +32,7 @@ export default function App() {
 
 
   if (gameIsOver && userNumber) {
-    screens = <OyunBitis />
+    screens = <OyunBitis roundsNumber={guessCounts} userNumber={userNumber} />
   }
 
   return (
@@ -43,6 +45,7 @@ export default function App() {
         source={require('./assets/backimg.jpg')}
         imageStyle={styles.img}
       >
+
         {screens}
       </ImageBackground>
 

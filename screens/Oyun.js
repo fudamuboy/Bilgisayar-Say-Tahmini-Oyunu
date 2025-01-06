@@ -3,13 +3,14 @@ import React, { useEffect, useState } from 'react'
 import Titre from '../components/Titre'
 import ComputerSayi from '../components/ComputerSayi'
 import CustomBtn from '../components/CustomBtn'
+import AntDesign from '@expo/vector-icons/AntDesign';
+import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace'
 
 
 
 
 
-let minNum = 1
-let maxNum = 100
+
 
 // le currentGuess est le nbbre de deinette de l'ordi
 // et j'ai utilise curentGuess cme kle pr afficher le nbre guess ds la Oyun.js
@@ -20,12 +21,17 @@ export default function Oyun({ userNumber, onGaveOver }) {
 
     const initialGuess = generateNum(1, 100, userNumber)
     const [currentGuess, setCurrentGuess] = useState(initialGuess)
+    const [guessCounts, setGuessCounts] = useState([initialGuess])
 
     useEffect(() => {
         if (currentGuess === userNumber) {
-            onGaveOver(); // Si l'ordinateur devine le nombre, le jeu se termine
+            onGaveOver(guessCounts.length); // Si l'ordinateur devine le nombre, le jeu se termine
         }
     }, [currentGuess, userNumber, onGaveOver]);
+    useEffect(() => {
+        minNum = 1
+        maxNum = 100
+    }, [])
 
     const nextGuessHandler = (direction) => {
         if ((direction === 'lower' && currentGuess < userNumber) ||
@@ -43,6 +49,7 @@ export default function Oyun({ userNumber, onGaveOver }) {
         }
         const newRandomNum = generateNum(minNum, maxNum, currentGuess);
         setCurrentGuess(newRandomNum);
+        setGuessCounts((previGuess) => [newRandomNum, ...previGuess])
     }
 
 
@@ -61,20 +68,21 @@ export default function Oyun({ userNumber, onGaveOver }) {
     return (
         <View style={styles.container}>
             <Titre>Bilgisayar Tahmini</Titre>
-            <View>
+            <ComputerSayi>{currentGuess} </ComputerSayi>
 
-                <ComputerSayi>{currentGuess} </ComputerSayi>
-                <Text>Altinda mi ustunde mi </Text>
+            <View style={styles.card}>
+                <Text style={styles.text}>Altinda mi ustunde mi </Text>
                 <View style={styles.btnContainer}>
                     <CustomBtn onPress={nextGuessHandler.bind(this, 'lower')}>
-                        -
+                        <AntDesign name="minus" size={24} color="white" />
                     </CustomBtn>
                     <CustomBtn onPress={nextGuessHandler.bind(this, 'greater')}>
-                        +
+                        <AntDesign name="plus" size={24} color="white" />
                     </CustomBtn>
-                </View>
 
+                </View>
             </View>
+
 
         </View>
     )
@@ -88,6 +96,26 @@ const styles = StyleSheet.create({
     btnContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingHorizontal: 50,
-    }
+        paddingHorizontal: 100,
+    },
+    card: {
+        backgroundColor: 'orange',
+        padding: 16,
+        marginTop: 20,
+        borderRadius: 20,
+        elevation: 4,
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 2 },
+        shadowRadius: 6,
+        shadowOpacity: 0.25,
+        alignItems: 'center',
+        justifyContent: 'center',
+
+    },
+    text: {
+        textAlign: 'center',
+        color: 'white',
+        fontSize: 20,
+        marginBottom: 10,
+    },
 })
