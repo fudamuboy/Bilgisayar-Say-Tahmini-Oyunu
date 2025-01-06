@@ -2,7 +2,7 @@
 
 
 Bu proje, kullanıcı tarafından belirlenen bir sayıyı tahmin etmeye çalışan bir bilgisayar tahmin oyunu uygulamasıdır. React Native kullanılarak geliştirilmiş ve mobil cihazlarda çalışacak şekilde tasarlanmıştır.
-Özellikler 📋
+<br>Özellikler 📋
 
     Kullanıcı, 1 ile 99 arasında bir sayı belirler.
     Bilgisayar, rastgele bir başlangıç tahmini ile oyuna başlar.
