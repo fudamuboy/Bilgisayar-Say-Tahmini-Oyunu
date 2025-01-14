@@ -1,14 +1,13 @@
 ﻿# Bilgisayar Sayı Tahmini Oyunu 🎮 
 
 
-Bu proje, kullanıcı tarafından belirlenen bir sayıyı tahmin etmeye çalışan bir bilgisayar tahmin oyunu uygulamasıdır. React Native kullanılarak geliştirilmiş ve mobil cihazlarda çalışacak şekilde tasarlanmıştır.
-<br>Özellikler 📋
+Bu proje, kullanıcı tarafından belirlenen bir sayıyı tahmin etmeye çalışan bir bilgisayar tahmin oyunu uygulamasıdır. Uygulama, React Native kullanılarak geliştirilmiş ve mobil cihazlarda çalışacak şekilde tasarlanmıştır.
+<p>Özellikler 📋</p>
 
-    Kullanıcı, 1 ile 99 arasında bir sayı belirler.
-    Bilgisayar, rastgele bir başlangıç tahmini ile oyuna başlar.
-    Kullanıcı, tahminin doğru olup olmadığını ve tahminin üstünde mi yoksa altında mı olduğunu belirtir.
-    Bilgisayar, tahminlerini sürekli geliştirir ve doğru tahmini bulur.
-    Oyun tamamlandığında, kaç denemede doğru tahminin yapıldığı ekranda gösterilir.
+    Kullanıcı, bir sayı belirler ve bilgisayar bu sayıyı tahmin etmeye çalışır.
+    React Native ile geliştirildiği için Android ve iOS cihazlarda sorunsuz çalışır.
+    Kod içerisinde, anlamayı kolaylaştırmak için birçok açıklayıcı yorum eklenmiştir. Bu sayede, anlamadığınız bir yerde yorumlar size rehberlik edecektir.
+    Kullanıcının oyun deneyimini iyileştirmek için sade ve kullanıcı dostu bir arayüz tasarlanmıştır.
 
 Bileşenler 🛠️
 
@@ -51,6 +50,10 @@ Ekran Görüntüleri 📱
 
     Bitiş Ekranı
     Oyun sonucunun gösterildiği ekran.
+# Ekran Görüntü 
+![coo](https://github.com/user-attachments/assets/179ceac4-bb55-44b2-9e43-93b8ee3104ee)
+![Adsız tasarım](https://github.com/user-attachments/assets/c9633e25-16e5-4162-8e4d-8bdf4188c25e)
+
 
 # Ekran Görüntü videosu 📱
   https://github.com/user-attachments/assets/0384cc5e-618b-40c8-88ef-9ded451d6dcb
